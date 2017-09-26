@@ -16,4 +16,30 @@ parts:
       - grub-efi-amd64-signed
       - grub-pc-bin
       - shim-signed
+  recovery-configs:
+    plugin: dump
+    source: recovery-configs
+    organize:
+        devmode-firstboot-hooks/*: writable-includes/system-data/var/lib/devmode-firstboot/hooks.d/
+        config.yaml: recovery-assets/recovery/
+    stage:
+        - -devmode-firstboot-hooks/
+  ubuntu-recovery:
+    plugin: godeps
+    source: https://github.com/musicguitar/ubuntu-recovery.git
+    source-branch: support-ubuntu-image-restructuring
+    after:
+      - recovery-configs
+    go-importpath: github.com/musicguitar/ubuntu-recovery
+    prepare: |
+      snapcraft-hooks/prepare.sh
+    build: |
+      snapcraft-hooks/build.sh
+    install: |
+      snapcraft-hooks/install.sh
+    build-packages:
+      - squashfs-tools
+      - u-boot-tools
+      - gawk
+      - sed
         

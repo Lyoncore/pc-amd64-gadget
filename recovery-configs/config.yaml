@@ -1,0 +1,37 @@
+project: generic-amd64
+snaps:
+  kernel: pc-kernel
+  os: core
+  gadget: pc
+configs:
+  arch: amd64
+  baseimage: base.img
+  recoverytype: recovery
+  recoverysize: 768
+  release: 16
+  channel: stable 
+  size: 4
+  partition-type: gpt
+  bootloader: grub
+  modelassertion: model.assertion
+  packages:
+    - snapweb
+udf:
+  binary: ./ubuntu-device-flash
+  command: core
+debug:
+  devmode: on
+  ssh: on
+  xz: off
+recovery:
+  type: factory_install
+  filesystem-label: ESP
+  installerfslabel: INSTALLER
+  boot-partition:
+  systemboot-partition:
+  writable-partition:
+  boot-image:
+  systemboot-image:
+  writable-image:
+  sign-serial: off
+  sign-api-key: U2VyaWFsIFZhdWx0Cg
