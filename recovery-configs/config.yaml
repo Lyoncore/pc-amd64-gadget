@@ -9,7 +9,7 @@ configs:
   recoverytype: recovery
   recoverysize: 768
   release: 16
-  channel: stable 
+  channel: stable
   size: 4
   partition-type: gpt
   bootloader: grub
