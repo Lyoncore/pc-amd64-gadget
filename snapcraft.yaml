@@ -27,19 +27,19 @@ parts:
   ubuntu-recovery:
     plugin: godeps
     source: https://github.com/musicguitar/ubuntu-recovery.git
-    source-branch: support-ubuntu-image-restructuring
+    source-branch: temp
     after:
       - recovery-configs
     go-importpath: github.com/musicguitar/ubuntu-recovery
     prepare: |
       snapcraft-hooks/prepare.sh
     build: |
-      snapcraft-hooks/build.sh
+      snapcraft-hooks/build.sh amd64
     install: |
       snapcraft-hooks/install.sh
     build-packages:
       - squashfs-tools
-      - u-boot-tools
+      - grub-common
       - gawk
       - sed
         
