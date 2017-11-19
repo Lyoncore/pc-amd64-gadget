@@ -6,32 +6,17 @@ snaps:
 configs:
   arch: amd64
   baseimage: base.img
-  recoverytype: recovery
-  recoverysize: 768
+  swap: on
+  swapsize: 1024
   release: 16
-  channel: stable
-  size: 4
   partition-type: gpt
   bootloader: grub
-  modelassertion: model.assertion
-  packages:
-    - snapweb
-udf:
-  binary: ./ubuntu-device-flash
-  command: core
-debug:
-  devmode: on
-  ssh: on
-  xz: off
 recovery:
   type: factory_install
-  filesystem-label: ESP
   installerfslabel: INSTALLER
-  boot-partition:
-  systemboot-partition:
-  writable-partition:
-  boot-image:
-  systemboot-image:
-  writable-image:
-  sign-serial: off
-  sign-api-key: U2VyaWFsIFZhdWx0Cg
+  recoverysize: 768
+  filesystem-label: ESP
+  oem-preinst-hook-dir: OEM_pre_install_hook
+  oem-postinst-hook-dir: OEM_post_install_hook
+  oem-prereboot-hook-dir: OEM_pre_reboot_hook
+  oemlogdir: MFGMEDIA
