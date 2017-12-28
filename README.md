@@ -21,6 +21,29 @@ projects better than what is available with Github issues.
 
 To build the gadget snap locally please use `snapcraft`.
 
+## Building ubuntu core image with recovery
+
+To build the Ubuntu core image with recovery partititon, please preparee model assertion.
+Install/refresh the ubuntu-image in the edge(1.1+snap3).
+```
+Install:
+$ snap install ubutnu-image --edge
+
+Refresh:
+$ snap refresh ubuntu-image --edge
+```
+
+Building the image with ubuntu-image by following command:
+```
+$ ubuntu-image --extra-snaps pc_16.04-0.9_amd64.snap -w workdir <path to model assertion>/pc.model --hooks-directory workdir/unpack/gadget/ubuntu-image-hooks/
+```
+
+Note: Currently, the recovery process requires to get user confirmation to prevent damage user data.
+The user confirmation still output to serial console only. Please attach serial console and enter [y] enter in when you see the prompt:
+```
+Factory Restore will delete all user data, are you sure? [y/N]
+```
+
 ## Launchpad Mirror and Automatic Builds.
 
 All commits from the master branch of https://github.com/snapcore/pc-amd64
