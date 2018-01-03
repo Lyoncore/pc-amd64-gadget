@@ -22,6 +22,7 @@ parts:
     organize:
         devmode-firstboot-hooks/*: writable-includes/system-data/var/lib/devmode-firstboot/hooks.d/
         config.yaml: recovery-assets/recovery/
+        grub_recovery.cfg: recovery-assets/EFI/ubuntu/grub.cfg
     stage:
         - -devmode-firstboot-hooks/
   ubuntu-custom-recovery:
