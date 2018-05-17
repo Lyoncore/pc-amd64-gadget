@@ -1,0 +1,2 @@
+once;
+usb_one_time_boot usb ;

@@ -24,13 +24,13 @@ To build the gadget snap locally please use `snapcraft`.
 ## Building ubuntu core image with recovery
 
 To build the Ubuntu core image with recovery partititon, please preparee model assertion.
-Install/refresh the ubuntu-image in the edge(1.1+snap3).
+Install/refresh the ubuntu-image in the beta(1.1+snap3).
 ```
 Install:
-$ snap install ubutnu-image --edge
+$ snap install ubutnu-image --beta
 
 Refresh:
-$ snap refresh ubuntu-image --edge
+$ snap refresh ubuntu-image --beta
 ```
 
 Building the image with ubuntu-image by following command:
