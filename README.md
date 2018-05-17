@@ -35,7 +35,7 @@ $ snap refresh ubuntu-image --beta
 
 Building the image with ubuntu-image by following command:
 ```
-$ ubuntu-image --extra-snaps pc_16.04-0.9_amd64.snap -w workdir <path to model assertion>/pc.model --hooks-directory workdir/unpack/gadget/ubuntu-image-hooks/
+$ ubuntu-image snap --extra-snaps pc_16.04-0.9_amd64.snap -w workdir <path to model assertion>/pc.model --hooks-directory workdir/unpack/gadget/ubuntu-image-hooks/
 ```
 
 Note: Currently, the recovery process requires to get user confirmation to prevent damage user data.
