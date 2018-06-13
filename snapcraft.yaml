@@ -34,7 +34,7 @@ parts:
   ubuntu-custom-recovery:
     plugin: godeps
     source: https://github.com/Lyoncore/ubuntu-custom-recovery.git
-    source-branch: ubuntu-image-with-amd64
+    source-branch: master
     after:
       - recovery-configs
     go-importpath: github.com/Lyoncore/ubuntu-custom-recovery
