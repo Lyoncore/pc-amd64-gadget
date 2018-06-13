@@ -6,6 +6,7 @@ snaps:
 configs:
   arch: amd64
   baseimage: base.img
+  bootsize: 512
   swap: on
   swapsize: 1024
   release: 16
